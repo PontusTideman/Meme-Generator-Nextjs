@@ -33,6 +33,7 @@ import {
   handleGenerateMeme,
 } from "@/lib/stateHandlers";
 import ColorInput from "./ColorInput";
+import { CommandList } from "cmdk";
 
 const MemeSettings = forwardRef(
   (
@@ -113,6 +114,7 @@ const MemeSettings = forwardRef(
                 <CommandInput className="p-4" placeholder="Search for a meme" />
                 <CommandEmpty>No Memes Found</CommandEmpty>
                 <CommandGroup>
+                  <CommandList>
                   <ScrollArea className="max-h-[250px] md:max-h-[500px] overflow-y-scroll">
                     {memes.map((meme) => (
                       <CommandItem
@@ -147,6 +149,7 @@ const MemeSettings = forwardRef(
                       </CommandItem>
                     ))}
                   </ScrollArea>
+                  </CommandList>
                 </CommandGroup>
               </Command>
             </PopoverContent>

@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['i.imgflip.com']
-    }
+   images: {
+    remotePatterns: [
+        {
+            protocol: 'https',
+            hostname: 'i.imgflip.com',
+            pathname: '**',
+        }
+    ]
+   }
 }
 
 module.exports = nextConfig

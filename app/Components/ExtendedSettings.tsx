@@ -14,6 +14,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { cn } from '@/lib/utils'
 import { SettingsContext } from '@/context/SettingsProvider'
 import { handleAllCapsed, handleBolded, handleChangeFontFamily, handleFontSizeChange, handleItalicized, handleOpacityChange, handleOutlineWidthChange, handleTextAlignChange, handleTextDecoration, handleVerticalAlignChange } from '@/lib/stateHandlers'
+import { CommandList } from 'cmdk'
 export default function ExtendedSettings({ index }: {
     index: number
 }) {
@@ -49,6 +50,7 @@ export default function ExtendedSettings({ index }: {
                                 <CommandInput className='p-4' placeholder="Search for a font" />
                                 <CommandEmpty>No Fonts Found</CommandEmpty>
                                 <CommandGroup className='h-40 overflow-y-scroll'>
+                                    <CommandList>
                                     {
                                         getFontFamilies().map((font, i) => (
                                             <CommandItem
@@ -67,6 +69,7 @@ export default function ExtendedSettings({ index }: {
                                             </CommandItem>
                                         ))
                                     }
+                                    </CommandList>
                                 </CommandGroup>
                             </Command>
                         </PopoverContent>
